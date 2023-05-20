@@ -29,8 +29,8 @@ const titleClickHandler = function(event){
 
   /* [DONE] add class 'active' to the correct article */
   targetArticle.classList.add('active');
-
 };
+
 
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
@@ -62,13 +62,13 @@ function generateTitleLinks(){
   }
 
   titleList.innerHTML = html;
+
+  const links = document.querySelectorAll('.titles a');
+  for(let link of links){
+    link.addEventListener('click', titleClickHandler);
+    console.log(link);
+  }
+
 }
 
 generateTitleLinks();
-
-const links = document.querySelectorAll('.titles a');
-
-for(let link of links){
-  link.addEventListener('click', titleClickHandler);
-  console.log(link);
-}
